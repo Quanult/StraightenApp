@@ -127,7 +127,8 @@ class MAIN_HANDLE(Ui_MainWindow):
         self.lcd_width.display(self.slider_line_width.value())
         
     def changeImg(self, data):
-        
+        if self.stackedWidget_3.currentWidget() == self.page_tool:
+            self.ai_imgs[self.imgIdx] = self.current_tool
 
         if data == 1 and self.imgIdx < len(self.list_img)-1:
             self.imgIdx += 1
