@@ -9,27 +9,47 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 from interactive import Interactive
+from PyQt5.QtGui import QPixmap
+
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1478, 900)
+        MainWindow.resize(1450, 900)
+        MainWindow.setFixedSize(1450, 900)
+        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(60, 30, 1391, 781))
+        self.stackedWidget.setGeometry(QtCore.QRect(30, 30, MainWindow.width()-50, MainWindow.height()-150))
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.btn_select = QtWidgets.QPushButton(self.page)
         self.btn_select.setGeometry(QtCore.QRect(30, 50, 201, 51))
         self.btn_select.setObjectName("btn_select")
-        self.list_imgLoad = QtWidgets.QListWidget(self.page)
-        self.list_imgLoad.setGeometry(QtCore.QRect(270, 50, 921, 731))
+        self.btn_select_2 = QtWidgets.QPushButton(self.page)
+        self.btn_select_2.setGeometry(QtCore.QRect(30, 120, 201, 51))
+        self.btn_select_2.setObjectName("btn_select_2")
+        self.stackedWidget_4 = QtWidgets.QStackedWidget(self.page)
+        self.stackedWidget_4.setGeometry(QtCore.QRect(270, 50, 921, 731))
+        self.stackedWidget_4.setObjectName("stackedWidget_4")
+        self.page_select_karyogram = QtWidgets.QWidget()
+        self.page_select_karyogram.setObjectName("page_select_karyogram")
+        self.lb_karyotype_img = QtWidgets.QLabel(self.page_select_karyogram)
+        self.lb_karyotype_img.setGeometry(QtCore.QRect(0, 0, 921, 731))
+        self.lb_karyotype_img.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.lb_karyotype_img.setText("")
+        self.lb_karyotype_img.setObjectName("lb_karyotype_img")
+        self.stackedWidget_4.addWidget(self.page_select_karyogram)
+        self.page_select_singlechro = QtWidgets.QWidget()
+        self.page_select_singlechro.setObjectName("page_select_singlechro")
+        self.list_imgLoad = QtWidgets.QListWidget(self.page_select_singlechro)
+        self.list_imgLoad.setGeometry(QtCore.QRect(0, 0, 921, 731))
         self.list_imgLoad.setObjectName("list_imgLoad")
+        self.stackedWidget_4.addWidget(self.page_select_singlechro)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -65,6 +85,7 @@ class Ui_MainWindow(object):
         self.lb_ai_img = QtWidgets.QLabel(self.page_ai)
         self.lb_ai_img.setGeometry(QtCore.QRect(0, 0, 551, 551))
         self.lb_ai_img.setText("")
+        self.lb_ai_img.setTextFormat(QtCore.Qt.PlainText)
         self.lb_ai_img.setObjectName("lb_ai_img")
         self.stackedWidget_3.addWidget(self.page_ai)
         self.page_tool = QtWidgets.QWidget()
@@ -81,7 +102,7 @@ class Ui_MainWindow(object):
         self.btn_nextImg.setGeometry(QtCore.QRect(1330, 240, 51, 121))
         self.btn_nextImg.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\Item/triangle-right-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("./Item/triangle-right-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_nextImg.setIcon(icon)
         self.btn_nextImg.setIconSize(QtCore.QSize(60, 60))
         self.btn_nextImg.setObjectName("btn_nextImg")
@@ -89,7 +110,7 @@ class Ui_MainWindow(object):
         self.btn_previousImg.setGeometry(QtCore.QRect(10, 240, 51, 121))
         self.btn_previousImg.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(".\\Item/triangle-left-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("./Item/triangle-left-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_previousImg.setIcon(icon1)
         self.btn_previousImg.setIconSize(QtCore.QSize(60, 60))
         self.btn_previousImg.setObjectName("btn_previousImg")
@@ -112,32 +133,48 @@ class Ui_MainWindow(object):
         self.btn_aivstool.setGeometry(QtCore.QRect(990, 630, 93, 51))
         self.btn_aivstool.setObjectName("btn_aivstool")
         self.btn_save = QtWidgets.QPushButton(self.page_2)
-        self.btn_save.setGeometry(QtCore.QRect(1290, 730, 93, 51))
+        self.btn_save.setGeometry(QtCore.QRect(1285, 700, 95, 50))
         self.btn_save.setObjectName("btn_save")
         self.stackedWidget.addWidget(self.page_2)
+        self.lb_process = QtWidgets.QLabel(self.centralwidget)
+        self.lb_process.setGeometry(QtCore.QRect(1000, 30, 300, 20))
+        self.lb_process.setText("")
+        self.lb_process.setObjectName("lb_process")
         self.btn_startMenu = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_startMenu.setGeometry(QtCore.QRect(40, 850, 93, 25))
+        self.btn_startMenu.setGeometry(QtCore.QRect(40, 825, 95, 50))
         self.btn_startMenu.setObjectName("btn_startMenu")
         self.btn_runMenu = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_runMenu.setGeometry(QtCore.QRect(1360, 850, 93, 25))
+        self.btn_runMenu.setGeometry(QtCore.QRect(MainWindow.width()-135 , 825, 95, 50))
         self.btn_runMenu.setObjectName("btn_runMenu")
+        self.pbar = QtWidgets.QProgressBar(self.centralwidget)
+        self.pbar.setGeometry(QtCore.QRect(300, 825, 960, 50))
+        self.pbar.setObjectName("pbar")
+        
         MainWindow.setCentralWidget(self.centralwidget)
 
+        self.lb_karyotype_img.setPixmap(QPixmap('./Item/chromosome.png').scaled(921,731))
+        self.stackedWidget_4.setCurrentWidget(self.page_select_karyogram)
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_select.setText(_translate("MainWindow", "PushButton"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Straightening Chromosome"))
+        
+        self.btn_select.setText(_translate("MainWindow", "Single Chromosome Image"))
+        self.btn_select_2.setText(_translate("MainWindow", "Karyotype Image"))
         self.btn_change_to_draw.setText(_translate("MainWindow", "Tool"))
         self.btn_straightener.setText(_translate("MainWindow", "Straighten"))
         self.btn_aivstool.setText(_translate("MainWindow", "AI vs Tool"))
         self.btn_save.setText(_translate("MainWindow", "Save"))
-        self.btn_startMenu.setText(_translate("MainWindow", "PushButton"))
-        self.btn_runMenu.setText(_translate("MainWindow", "PushButton"))
+        # self.btn_startMenu.setText(_translate("MainWindow", "PushButton"))
+        # self.btn_runMenu.setText(_translate("MainWindow", "PushButton"))
+        self.btn_runMenu.setText(_translate("MainWindow", "Straighten"))
+        self.btn_startMenu.setText(_translate("MainWindow", "Main menu"))
 
 
 if __name__ == "__main__":
