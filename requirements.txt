@@ -1,0 +1,6 @@
+opencv-python-headless
+numpy
+torch==1.12.1
+PyQt5
+Pillow
+pyimagej
