@@ -1,6 +1,6 @@
 opencv-python-headless
 numpy
-torch==1.12.1
+torch
 PyQt5
 Pillow
 pyimagej
