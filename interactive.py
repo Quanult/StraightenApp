@@ -1,10 +1,8 @@
-from cmath import rect
-from importlib.resources import path
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget,  QVBoxLayout, QPushButton, QGraphicsSceneMouseEvent
 from PyQt5.QtCore import Qt, QPoint, QRect,QLineF, QSize
 from PyQt5.QtGui import QPixmap, QPainter, QPen, QBrush
-from PyQt5 import QtWidgets, QtCore, QtGui
+
 
 class Interactive(QWidget):
 	def __init__(self, image_path = None):
@@ -108,59 +106,3 @@ if __name__ == '__main__':
 		print('Closing Window...')
 
 
-'''
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
-from PyQt5.QtCore import Qt, QPoint, QRect
-from PyQt5.QtGui import QPixmap, QPainter
-
-
-
-class MyApp(QWidget):
-	def __init__(self):
-		super().__init__()
-		self.window_width, self.window_height = 1200, 800
-		self.setMinimumSize(self.window_width, self.window_height)
-
-		layout = QVBoxLayout()
-		self.setLayout(layout)
-
-		self.pix = QPixmap(self.rect().size())
-		self.pix.fill(Qt.white)
-
-		self.begin, self.end = QPoint(), QPoint()	
-
-	def paintEvent(self, event):
-		painter = QPainter(self)
-		painter.drawPixmap(QPoint(), self.pix)
-
-		if not self.begin.isNull() and not self.end.isNull():
-			rect = QRect(self.begin, self.end)
-			painter.drawRect(rect.normalized())
-
-	def mousePressEvent(self, event):
-		if event.buttons() & Qt.LeftButton:
-			print('Point 1')
-			self.begin = event.pos()
-			self.end = self.begin
-			self.update()
-
-	def mouseMoveEvent(self, event):
-		if event.buttons() & Qt.LeftButton:		
-			print('Point 2')	
-			self.end = event.pos()
-			self.update()
-
-	def mouseReleaseEvent(self, event):
-		print('Point 3')
-		if event.button() & Qt.LeftButton:
-			rect = QRect(self.begin, self.end)
-			painter = QPainter(self.pix)
-			painter.drawRect(rect.normalized())
-
-			self.begin, self.end = QPoint(), QPoint()
-			self.update()
-
-
-
-'''
