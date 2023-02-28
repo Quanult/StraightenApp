@@ -2,7 +2,7 @@ import torch
 
 
 
-DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+DEVICE = torch.device('cpu')
 BATCH_SIZE = 128
 TEST_BATCH_SIZE = 1000
 EPOCHS = 50
