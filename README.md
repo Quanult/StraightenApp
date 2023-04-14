@@ -13,4 +13,4 @@ pip install -r requirements.txt
 
 ## Run demo
 
-When the installation is finished, run the main_handel.py file to start the application, it will take a moment to start at the fist time.
+When the installation is finished, run the '''main_handel.py''' file to start the application, it will take a moment to start at the fist time.
