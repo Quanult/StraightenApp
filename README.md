@@ -9,6 +9,9 @@ Assuming  Python and pip are set up, the Python-packages used by this code can b
 ```bash
 pip install -r requirements.txt
 ```
+
+Download the pretrained weight for straightening chromosome by spatial transformer network at [pretrained](https://vnueduvn-my.sharepoint.com/:u:/g/personal/18021031_vnu_edu_vn/Edfh4gMYWYxLjvctCAS-XoYBF9goK7VmDmsoAs4mZpl4WQ?e=bnTg9a)
+
 * Note: PyImageJ requires OpenJDK and Maven to be installed. See more installation [here](https://pyimagej.readthedocs.io/en/latest/Install.html)
 
 ## Run demo
