@@ -1,6 +1,6 @@
-opencv-python-headless
-numpy
-torch
-PyQt5
-Pillow
-pyimagej
+opencv-python-headless==4.6.0.66
+numpy==1.23.4
+torch==1.12.1
+PyQt5==5.15.7
+Pillow==9.2.0
+pyimagej==1.2.1
