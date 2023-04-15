@@ -12,7 +12,7 @@ import AI_straighten.model as model
 from AI_straighten.visualize_for_app import predictStraighten
 from Straighten_karyotype.Karyotyping_to_Chromosomes_bio_def import extract_chromosome
 from Straighten_karyotype.transparent_img_white import rewrite_image
-from Auto_straighten.complete_skeleton import list_image
+
 
 class MAIN_HANDLE(Ui_MainWindow):
     # list_img =[]
@@ -398,7 +398,7 @@ if __name__ == "__main__":
 
     ########## model straighten
     model_predict = model.get_model(config.TRAINING_CONDITION)
-    checkpoint = torch.load('./weight/outputs_transformer_bound_2/epoch_20.pth', map_location=torch.device('cpu'))
+    checkpoint = torch.load('./weight/straightening.pth', map_location=torch.device('cpu'))
     model_predict.load_state_dict(checkpoint)
     model_predict.eval()
 
